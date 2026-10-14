@@ -25,6 +25,7 @@ public class EmployeeController {
     @PostMapping("/signup")
     public ResponseEntity<Employee> signUp(@RequestBody @Valid Employee employee) {
 
+        log.info("Trying to save data for Employee: "+ employee.getEmpName());
         return new ResponseEntity<>(employeeService.signUp(employee), HttpStatus.CREATED);
 
     }
